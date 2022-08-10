@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Main{
+    public static void main (String[] arg)
+    {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String x;
+        for (int i = 1; i <= n; i++)
+        {
+            x=in.next();
+            char c;
+            int con=0;
+            double[] voc = new double[6];
+            for (int j = 0; j < x.length(); j++) {
+                c=x.charAt(j);
+                con++;
+                switch (c)
+                {
+                    case 'a':
+                        voc[1]++;
+                        break;
+                    case 'e':
+                        voc[2]++;
+                        break;
+                    case 'i':
+                        voc[3]++;
+                        break;
+                    case 'o':
+                        voc[4]++;
+                        break;
+                    case 'u':
+                        voc[5]++;
+                        break;
+                    default :
+                        voc[0]++;
+                        break;
+                }
+            }
+            //imprimiendo
+            System.out.println("Caso "+i+":");
+            System.out.printf("a= "+"%.2f",((voc[1]/con)*100));
+                        System.out.println();
+            System.out.printf("e= "+"%.2f",((voc[2]/con)*100));
+                        System.out.println();
+            System.out.printf("i= "+"%.2f",((voc[3]/con)*100));
+                        System.out.println();
+            System.out.printf("o= "+"%.2f",((voc[4]/con)*100));
+                        System.out.println();
+            System.out.printf("u= "+"%.2f",((voc[5]/con)*100));
+                        System.out.println();
+        }
+    }
+}
